@@ -1,0 +1,98 @@
+/* GENERAL */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', sans-serif;
+    color: #212529;
+}
+
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(90deg, #111827, #1f2937);
+    padding: 12px 20px;
+}
+
+.navbar-brand,
+.nav-link {
+    color: white !important;
+    font-weight: 500;
+}
+
+    .nav-link:hover {
+        color: #d1d5db !important;
+    }
+
+/* CARDS */
+.card {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+
+.card-img-top {
+    transition: 0.3s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.03);
+}
+
+/* BUTTONS */
+.btn-dark {
+    border-radius: 10px;
+    padding: 10px 16px;
+}
+
+.btn-success,
+.btn-primary,
+.btn-warning,
+.btn-danger {
+    border-radius: 10px;
+}
+
+/* PROPERTY TITLE */
+.card-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/* PROPERTY PRICE */
+.price-tag {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #111827;
+}
+
+/* FORMS */
+.form-control,
+.form-select {
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* TABLES */
+.table {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* BADGES */
+.badge {
+    padding: 8px 12px;
+    border-radius: 50px;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 60px;
+    background: #111827;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}

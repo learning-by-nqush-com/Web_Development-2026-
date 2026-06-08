@@ -1,0 +1,29 @@
+﻿<h2>
+    Message @ViewBag.ReceiverName
+</h2>
+
+<form method="post">
+
+    <input type="hidden"
+           name="receiverId"
+           value="@ViewBag.ReceiverId" />
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Message
+        </label>
+
+        <textarea name="content"
+                  class="form-control"
+                  rows="5">
+        </textarea>
+
+    </div>
+
+    <button type="submit"
+            class="btn btn-dark">
+        Send
+    </button>
+
+</form>

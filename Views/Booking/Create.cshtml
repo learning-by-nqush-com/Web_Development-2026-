@@ -1,0 +1,49 @@
+﻿@model Staybnb.Models.Booking
+
+<h2>Book Property</h2>
+
+<hr />
+
+<h4>@Model.Property.Title</h4>
+
+<p>
+    R @Model.Property.PricePerNight per night
+</p>
+
+<form asp-action="Create" method="post">
+
+    <div asp-validation-summary="All"
+         class="text-danger mb-3">
+    </div>
+
+    <input type="hidden" asp-for="PropertyId" />
+
+    <div class="mb-3">
+        <label asp-for="CheckInDate"></label>
+
+        <input asp-for="CheckInDate"
+               class="form-control"
+               type="date" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="CheckOutDate"></label>
+
+        <input asp-for="CheckOutDate"
+               class="form-control"
+               type="date" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Guests"></label>
+
+        <input asp-for="Guests"
+               class="form-control" />
+    </div>
+
+    <button type="submit"
+            class="btn btn-success">
+        Confirm Booking
+    </button>
+
+</form>

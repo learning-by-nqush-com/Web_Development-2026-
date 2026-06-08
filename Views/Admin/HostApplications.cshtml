@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Staybnb.Models.HostApplication>
+
+<h2>Host Applications</h2>
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Property</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.User.Email</td>
+
+                <td>@item.PropertyTitle</td>
+
+                <td>@item.PricePerNight</td>
+
+                <td>@item.Status</td>
+
+                <td>
+
+                    @if (item.Status == "Pending")
+                    {
+                        <a asp-action="Approve"
+                           asp-route-id="@item.Id"
+                           class="btn btn-success">
+                            Approve
+                        </a>
+
+                        <a asp-action="Reject"
+                           asp-route-id="@item.Id"
+                           class="btn btn-danger">
+                            Reject
+                        </a>
+                    }
+
+                </td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>

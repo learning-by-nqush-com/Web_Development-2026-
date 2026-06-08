@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Staybnb.Models.Notification>
+
+<h2>Notifications</h2>
+
+@if (!Model.Any())
+{
+    <p>No notifications.</p>
+}
+else
+{
+    <div class="list-group">
+
+        @foreach (var notification in Model)
+        {
+            <div class="list-group-item">
+
+                <div class="d-flex
+                                    justify-content-between">
+
+                    <div>
+
+                        <p class="mb-1">
+                            @notification.Message
+                        </p>
+
+                        <small class="text-muted">
+                            @notification.CreatedAt
+                        </small>
+
+                    </div>
+
+                    @if (!notification.IsRead)
+                    {
+                        <form asp-action="MarkAsRead"
+                              method="post">
+
+                            <input type="hidden"
+                                   name="id"
+                                   value="@notification.Id" />
+
+                            <button class="btn btn-sm btn-outline-dark">
+                                Mark Read
+                            </button>
+
+                        </form>
+                    }
+
+                </div>
+
+            </div>
+        }
+
+    </div>
+}

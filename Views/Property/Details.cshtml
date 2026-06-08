@@ -1,0 +1,191 @@
+﻿@model Staybnb.Models.Property
+
+<h2>@Model.Title</h2>
+
+@if (Model.Reviews.Any())
+{
+    <p>
+
+        <span class="text-warning">
+            ★
+        </span>
+
+        <strong>
+            @Model.AverageRating.ToString("0.0")
+        </strong>
+
+        <span class="text-muted">
+            (@Model.Reviews.Count review(s))
+        </span>
+
+    </p>
+}
+else
+{
+    <p class="text-muted">
+        No reviews yet
+    </p>
+}
+
+<hr />
+
+@if (Model.Images != null && Model.Images.Any())
+{
+    <div class="row mb-4">
+
+        @foreach (var image in Model.Images)
+        {
+            <div class="col-md-4 mb-3">
+
+                <img src="@image.ImageUrl"
+                     class="img-fluid rounded shadow-sm"
+                     style="height:250px;
+                                    width:100%;
+                                    object-fit:cover;" />
+
+            </div>
+        }
+
+    </div>
+}
+
+<p>
+    <strong>Description:</strong>
+</p>
+
+<p>
+    @Model.Description
+</p>
+
+<p class="price-tag">
+    R @Model.PricePerNight / night
+</p>
+
+<p>
+    <strong>Address:</strong>
+    @Model.Address
+</p>
+
+<p>
+    <strong>Max Guests:</strong>
+    @Model.MaxGuests
+</p>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <a asp-controller="Booking"
+       asp-action="Create"
+       asp-route-propertyId="@Model.Id"
+       class="btn btn-success">
+        Book Now
+    </a>
+}
+else
+{
+    <p>Please log in to book this property.</p>
+}
+<hr />
+
+<h3>Reviews</h3>
+
+@if (!Model.Reviews.Any())
+{
+    <p>No reviews yet.</p>
+}
+else
+{
+    @foreach (var review in Model.Reviews
+            .OrderByDescending(r => r.CreatedAt))
+    {
+        <div class="card mb-3">
+
+            <div class="card-body">
+
+                <h5>
+                    @review.Guest.UserName
+                </h5>
+
+                <p>
+                    <span class="text-warning">
+
+                        @for (int i = 0; i < review.Rating; i++)
+                        {
+                            <span>★</span>
+                        }
+
+                    </span>
+
+                </p>
+
+                <p>
+                    @review.Comment
+                </p>
+
+                <small class="text-muted">
+                    @review.CreatedAt.ToShortDateString()
+                </small>
+
+            </div>
+
+        </div>
+    }
+}
+@if (User.Identity.IsAuthenticated)
+{
+    <hr />
+
+    <h4>Leave a Review</h4>
+
+    <form asp-controller="Review"
+          asp-action="Create"
+          method="post">
+
+        <input type="hidden"
+               name="propertyId"
+               value="@Model.Id" />
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Rating
+            </label>
+
+            <select name="rating"
+                    class="form-select">
+
+                <option value="5">5</option>
+                <option value="4">4</option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="1">1</option>
+
+            </select>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Comment
+            </label>
+
+            <textarea name="comment"
+                  class="form-control"
+                  rows="4">
+            </textarea>
+
+        </div>
+
+        <button type="submit"
+                class="btn btn-dark">
+            Submit Review
+        </button>
+        <a asp-controller="Message"
+           asp-action="Create"
+           asp-route-receiverId="@Model.HostId"
+           class="btn btn-outline-dark">
+            Contact Host
+        </a>
+
+    </form>
+}

@@ -1,0 +1,117 @@
+﻿@model IEnumerable<Staybnb.Models.Property>
+
+<h2 class="mb-4">My Properties</h2>
+
+<a asp-action="Create"
+   class="btn btn-primary mb-4">
+    Add New Property
+</a>
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Success"]
+    </div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Error"]
+    </div>
+}
+
+@if (!Model.Any())
+{
+    <p>You have not created any properties yet.</p>
+}
+else
+{
+    <div class="row">
+
+        @foreach (var property in Model)
+        {
+            <div class="col-md-4 mb-4">
+
+                <div class="card h-100 shadow-sm">
+
+                    @if (property.Images != null
+                                && property.Images.Any())
+                    {
+                        <img src="@property.Images.First().ImageUrl"
+                             class="card-img-top"
+                             style="height:250px;
+                                                object-fit:cover;" />
+                    }
+                    else
+                    {
+                        <img src="/images/no-image.jpg"
+                             class="card-img-top"
+                             style="height:250px;
+                                                object-fit:cover;" />
+                    }
+
+                    <div class="card-body">
+
+                        <h5>@property.Title</h5>
+
+                        <p>
+                            R @property.PricePerNight / night
+                        </p>
+
+                        <p>@property.Address</p>
+
+                        <p>
+                            Status:
+                            @if (property.IsActive)
+                            {
+                                <span class="badge bg-success">
+                                    Active
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-warning text-dark">
+                                    Pending Approval
+                                </span>
+                            }
+                        </p>
+
+                    </div>
+
+                    <div class="card-footer bg-white border-0">
+
+                        <a asp-action="Details"
+                           asp-route-id="@property.Id"
+                           class="btn btn-dark w-100 mb-2">
+                            View Details
+                        </a>
+                        <a asp-action="Edit"
+                           asp-route-id="@property.Id"
+                           class="btn btn-warning w-100">
+                            Edit Property
+                        </a>
+                        <form asp-action="Delete"
+                              method="post">
+
+                            <input type="hidden"
+                                   name="id"
+                                   value="@property.Id" />
+
+                            <button type="submit"
+                                    class="btn btn-danger w-100 mt-2"
+                                    onclick="return confirm(
+                                                            'Are you sure you want to delete this property?');">
+                                Delete Property
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+        }
+
+    </div>
+}

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Staybnb.Models.Message>
+
+<h2>Inbox</h2>
+
+@if (!Model.Any())
+{
+    <p>No messages found.</p>
+}
+else
+{
+    @foreach (var message in Model)
+    {
+        <div class="card mb-3">
+
+            <div class="card-body">
+
+                <h5>
+
+                    From:
+                    @message.Sender.UserName
+
+                    →
+
+                    To:
+                    @message.Receiver.UserName
+
+                </h5>
+
+                <p>
+                    @message.Content
+                </p>
+
+                <small class="text-muted">
+                    @message.SentAt
+                </small>
+
+            </div>
+
+        </div>
+    }
+}

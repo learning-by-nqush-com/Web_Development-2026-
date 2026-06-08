@@ -1,0 +1,98 @@
+﻿@model IEnumerable<Staybnb.Models.Booking>
+
+<h2>Bookings On My Properties</h2>
+
+@if (!Model.Any())
+{
+    <p>No bookings found.</p>
+}
+else
+{
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th>Property</th>
+                <th>Guest</th>
+                <th>Check In</th>
+                <th>Check Out</th>
+                <th>Total Price</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (var booking in Model)
+            {
+                <tr>
+
+                    <td>
+                        @booking.Property.Title
+                    </td>
+
+                    <td>
+                        @booking.Guest.UserName
+                    </td>
+
+                    <td>
+                        @booking.CheckInDate.ToShortDateString()
+                    </td>
+
+                    <td>
+                        @booking.CheckOutDate.ToShortDateString()
+                    </td>
+
+                    <td>
+                        R @booking.TotalPrice
+                    </td>
+
+                    <td>
+                        @booking.Status
+                    </td>
+
+                    <td>
+
+                        @if (booking.Status == "Pending")
+                        {
+                            <form asp-action="Approve"
+                                  method="post"
+                                  class="d-inline">
+
+                                <input type="hidden"
+                                       name="id"
+                                       value="@booking.Id" />
+
+                                <button type="submit"
+                                        class="btn btn-success btn-sm">
+                                    Approve
+                                </button>
+
+                            </form>
+
+                            <form asp-action="Reject"
+                                  method="post"
+                                  class="d-inline">
+
+                                <input type="hidden"
+                                       name="id"
+                                       value="@booking.Id" />
+
+                                <button type="submit"
+                                        class="btn btn-danger btn-sm">
+                                    Reject
+                                </button>
+
+                            </form>
+                        }
+
+                    </td>
+
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+}

@@ -1,0 +1,86 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ntombiyenkosindlela\\OneDrive - KZN Department of Education\\Desktop\\C#\\Staybnb\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{475817A9-E5E9-4F46-BB28-0B6F229EB53B}|Staybnb.csproj|c:\\users\\ntombiyenkosindlela\\onedrive - kzn department of education\\desktop\\c#\\staybnb\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{475817A9-E5E9-4F46-BB28-0B6F229EB53B}|Staybnb.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{475817A9-E5E9-4F46-BB28-0B6F229EB53B}|Staybnb.csproj|c:\\users\\ntombiyenkosindlela\\onedrive - kzn department of education\\desktop\\c#\\staybnb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{475817A9-E5E9-4F46-BB28-0B6F229EB53B}|Staybnb.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{475817A9-E5E9-4F46-BB28-0B6F229EB53B}|Staybnb.csproj|c:\\users\\ntombiyenkosindlela\\onedrive - kzn department of education\\desktop\\c#\\staybnb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{475817A9-E5E9-4F46-BB28-0B6F229EB53B}|Staybnb.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{475817A9-E5E9-4F46-BB28-0B6F229EB53B}|Staybnb.csproj|c:\\users\\ntombiyenkosindlela\\onedrive - kzn department of education\\desktop\\c#\\staybnb\\views\\property\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{475817A9-E5E9-4F46-BB28-0B6F229EB53B}|Staybnb.csproj|solutionrelative:views\\property\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\ntombiyenkosindlela\\OneDrive - KZN Department of Education\\Desktop\\C#\\Staybnb\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\ntombiyenkosindlela\\OneDrive - KZN Department of Education\\Desktop\\C#\\Staybnb\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAwwGIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-06-08T20:30:51.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\ntombiyenkosindlela\\OneDrive - KZN Department of Education\\Desktop\\C#\\Staybnb\\Views\\Property\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Property\\Details.cshtml",
+              "ToolTip": "C:\\Users\\ntombiyenkosindlela\\OneDrive - KZN Department of Education\\Desktop\\C#\\Staybnb\\Views\\Property\\Details.cshtml",
+              "RelativeToolTip": "Views\\Property\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-28T19:25:49.343Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ntombiyenkosindlela\\OneDrive - KZN Department of Education\\Desktop\\C#\\Staybnb\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ntombiyenkosindlela\\OneDrive - KZN Department of Education\\Desktop\\C#\\Staybnb\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-28T19:24:29.244Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\ntombiyenkosindlela\\OneDrive - KZN Department of Education\\Desktop\\C#\\Staybnb\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\ntombiyenkosindlela\\OneDrive - KZN Department of Education\\Desktop\\C#\\Staybnb\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABEAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-28T19:00:36.447Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+﻿@model List<Staybnb.ViewModels.UserRolesViewModel>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Success"]
+    </div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Error"]
+    </div>
+}
+
+<h2>Manage Users</h2>
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Roles</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var user in Model)
+        {
+            <tr>
+
+                <td>@user.Email</td>
+
+                <td>
+                    @string.Join(", ", user.Roles)
+                </td>
+
+                <td>
+
+                    @if (!user.Roles.Contains("Host"))
+                    {
+                        <a asp-action="MakeHost"
+                           asp-route-id="@user.UserId"
+                           class="btn btn-warning btn-sm">
+                            Make Host
+                        </a>
+                    }
+
+                    @if (!user.Roles.Contains("Admin"))
+                    {
+                        <a asp-action="MakeAdmin"
+                           asp-route-id="@user.UserId"
+                           class="btn btn-danger btn-sm">
+                            Make Admin
+                        </a>
+                    }
+
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+
+</table>
